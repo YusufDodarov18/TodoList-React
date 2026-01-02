@@ -17,7 +17,7 @@ export default function Dialog({dialog,data,setData,id}) {
     <div>
         <dialog ref={dialog}>
             <input type="text" value={inputEdit} onChange={(e)=>setInputEdit(e.target.value)} />
-            <button onClick={()=>setData(prevData=>prevData.map(e=>e.id==id?{...e,title:inputEdit}:e),dialog.current.close())}>Save</button>
+            <button onClick={()=>{if(inputEdit.trim()!="") setData(prevData=>prevData.map(e=>e.id?{...e,title:inputEdit}:e),dialog.current.close())}}>Save</button>
             <button onClick={()=>dialog.current.close()}>Cancel</button>
         </dialog>   
     </div>
