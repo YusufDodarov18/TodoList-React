@@ -1,0 +1,11 @@
+.delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+.delete:hover{
+    background-color: #f74848;
+}

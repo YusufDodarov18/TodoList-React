@@ -1,0 +1,11 @@
+.edit {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+.edit:hover{
+    background-color: #ff6f00;
+}

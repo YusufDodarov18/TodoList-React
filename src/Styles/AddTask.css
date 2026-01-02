@@ -1,0 +1,18 @@
+.inputAdd {
+    outline: 1px solid #0088ff;
+    height: 20px;
+}
+.btnAdd {
+    padding: 8px 20px;
+    background-color: #5eaff7;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    color: white;
+    transition: all 0.25s ease-in-out;
+    margin-left: 14px;
+}
+
+.btnAdd:hover{
+    background-color: #2290f0;
+}
