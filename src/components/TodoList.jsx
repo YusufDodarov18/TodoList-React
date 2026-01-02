@@ -24,6 +24,18 @@ useEffect(()=>{
     localStorage.setItem("data",JSON.stringify(data))
   },[data])
 
+  const filteredData = data.filter(e=>e.title.toLowerCase().includes(inputSearch.toLowerCase().trim()))
+    .filter(e => {
+    if (select === "Active") {
+      return e.completed === true
+    } else if (select === "InActive") {
+      return e.completed === false
+    } else {
+      return true
+    }
+  })
+
+
   
   return (  
    <div>
@@ -38,19 +50,9 @@ useEffect(()=>{
       <AddTask input={input} setInput={setInput} setData={setData}/>
     </div>
     <div>
-      {data.length===0?<div>Empty</div>:
-      data.filter(e=>e.title.toLowerCase().includes(inputSearch.toLowerCase().trim()))
-      .length===0?<div>Not found: {inputSearch}</div>:
-      data.filter(e=>{
-        if(select==="Active"){
-          return e.completed===true
-        }else if(select==="InActive"){
-          return e.completed===false
-        }else{
-          return e
-        }
-      })
-      .map((e,i)=>{
+      {data.length === 0?(<div>Empty</div>):
+        filteredData.length === 0 ? (<div>Not found: {inputSearch}</div>) : (
+    filteredData.map((e,i)=>{
         return <div className='tasks' key={e.id}>
          <div className='texts'>
             <span>{i+1}</span>
