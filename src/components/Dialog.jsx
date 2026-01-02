@@ -6,12 +6,10 @@ export default function Dialog({dialog,data,setData,id}) {
     const [inputEdit,setInputEdit]=useState("")
     const [idx,setIdx]=useState(null)
     useEffect(()=>{
-        if(inputEdit.trim()!=""){
         const exist=data.find(e=>e.id===id)
         if(exist){
             setInputEdit(exist.title)
             setIdx(id)
-        }
         }
     },[id,data])
     
