@@ -6,7 +6,6 @@ import CompletedTask from './CompletedTask';
 import { EditTask } from './EditTask';
 import { DeleteTask } from './DeleteTask';
 
-
 function TodoList() {
   const [input,setInput]=useState("")
   const [inputSearch,setInputSearch]=useState("")
@@ -34,7 +33,6 @@ useEffect(()=>{
       return true
     }
   })
-
 
   
   return (  
@@ -64,7 +62,7 @@ useEffect(()=>{
             <DeleteTask data={data} setData={setData} id={e.id}/>
           </div>
         </div>
-      })}
+      }))}
     </div>
    </div>
   );
