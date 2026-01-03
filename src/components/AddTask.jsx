@@ -1,9 +1,9 @@
-import css from "../Styles/AddTask.css"
+import styles from "../Styles/AddTask.module.css";
 function AddTask({input,setInput,setData}) {
   return (
     <div>
-        <input type="text" className="inputAdd" value={input} onChange={(ev)=>setInput(ev.target.value)} />
-        <button className="btnAdd" onClick={()=>{
+        <input type="text"  className={styles.inputAdd}  value={input} onChange={(ev)=>setInput(ev.target.value)} />
+        <button className={styles.btnAdd}  onClick={()=>{
           if(input.trim()!==""){
             setData(prevData=>[...prevData,{id:Date.now(),title:input,completed:false}])
             setInput("")
