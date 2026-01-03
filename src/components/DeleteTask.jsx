@@ -1,4 +1,4 @@
-import css from "../Styles/Delete.css"
+import css from "../Styles/Delete.module.css"
 export const DeleteTask=({id,data,setData})=> {
   return (
     <div>
